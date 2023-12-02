@@ -39,6 +39,24 @@
 \end{abstract}
 
 \section{Introdution}
+The development of generative Machine Learning models made huge steps forward, when it comes to comparison with human crafted artefacts. Large Language Models enable the generation of texts in all kind of different flavours and styles. Image generating models like ViT models can generate images, that already was used create fake images, that were reported as true by media. Other news showed artists winning art competitions with generated art. So there is an interest to detect, which texts or images are generated and which ones are real pictures or human-written text.
+
+
+So researchers evaluated different approaches to detect fake images and texts. But from other computer vision tasks like object detection, adversarial attacks are known, that can reduce the performance by artificially manipulating real images to reduce the performance of e.g. visual object detection models. This raises the questions, whether and how it is possible to manipulate generated artifacts (e.g. images and texts) to reduce the accuracy of detectors.
+
+
+It is necessary to evaluate whether such techniques exist, because otherwise one could rely on detectors, which can easily be tricked. If easy efficient manipulation techniques exist, better detectors need to be developed that are robust against these techniques. Also one might be able to improve the robustness and accuracy of existing detectors, when one understands how the attacks can be crafted.
+
+Therefore we came up with the following research questions:
+
+
+RQ1: How can generated images be manipulated to trick fake image detectors?
+
+
+RQ2: How can generated texts be manipulated to trick fake text generators?
+
+
+The report is structured as followed: After this introduction chapter 2 presents related work, especially text and image generating models as well  fake image and fake text detectors. Chapter 3 presents the methodology of our work. Chapter 4 presents the results our experiments. Chapter 5 discusses the results and chapter 6 will conclude the work.
 
 \section{Related work}
 
