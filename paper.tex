@@ -39,12 +39,12 @@
 \end{abstract}
 
 \section{Introduction}
-The development of generative Machine Learning models make huge steps forward in the last years considering comparison with human crafted artefacts. Large Language Models (LLM) enable the generation of texts in all kinds of different flavours and styles. There were already scenarios were fake images, created by image-generation models such as Vision Transformer (ViT) models, were reported as real ones by media. Other news showed artists winning art competitions with generated art. That means that there is an interest in detecting, which texts or images are generated and which ones are real pictures or human-written texts.
+The development of generative Machine Learning models made huge steps forward in the last years, considering the comparison with human crafted artefacts. Large Language Models (LLM) enable the generation of texts in all kinds of different flavours and styles. Image generating models like Vision Transformer (ViT) models already created fake images being reported as real by media. Other news showed artists winning art competitions with generated art. This creates an interest in detecting which texts or images are AI generated and which ones are real images or human-written texts.
 
-Therefore researchers evaluated different approaches to detect fake images and texts. But these attempts are from other computer vision tasks like object detection, adversarial attacks are known, that can reduce the performance by artificially manipulating real images to reduce the performance of e.g. visual object detection models. This raises the questions, whether and how it is possible to manipulate generated artefacts (e.g. images and texts) to reduce the accuracy of detectors.
+Therefore researchers evaluated different approaches to detect fake images and texts. Fortunately some adversarial attacks are already known to be able to reduce the performance of other computer vision tasks, e. g. visual object detection, by artificially manipulating real images. This raises the questions, whether and how it is possible to manipulate generated artefacts (e.g. images and texts) to reduce the accuracy of detectors.
 
 
-It is necessary to evaluate whether or not such techniques exist. If not one could rely on detectors, which can easily be easily tricked. If there are techniques exist that allow easy and efficient manipulation, better detectors, which are robust against those, need to be developed. Another solution would be to improve the robustness and accuracy of existing detectors, when understanding how the attacks can be crafted.
+It is necessary to evaluate whether such techniques exist, because otherwise one could rely on detectors, which can easily be tricked. If easy efficient manipulation techniques exist, existing detectors need to be improved or better detectors need to be developed that are robust against these techniques. But this preconditions a good understanding of the way attacks are performed.
 
 Therefore we came up with the following research questions:
 
@@ -55,7 +55,7 @@ RQ1: How can generated images be manipulated to trick fake image detectors?
 RQ2: How can generated texts be manipulated to trick fake text generators?
 
 
-The report is structured as follows: After this introduction chapter 2 presents related work, especially text and image generating models as well as fake image and fake text detectors. Chapter 3 presents the methodology of our work, followed by chapter 4 which shows the results of our experiments. Afterwards in  Chapter 5 those results will be discussed and our work will be concluded in chapter 6.
+The report is structured as follows: After this introduction chapter 2 presents related work, especially text and image generating models as well as fake image and text detectors. Chapter 3 presents the methodology of our work followed by chapter 4 presenting the results of our experiments. Afterwards the results will be discussed in chapter 5 and chapter 6 will conclude the work.
 
 \section{Related work}
 
