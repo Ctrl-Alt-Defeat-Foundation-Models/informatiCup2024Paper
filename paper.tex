@@ -69,6 +69,8 @@ The report is structured as follows: After this introduction chapter 2 presents 
 
 \subsubsection{Image detector models}
 
+The \textbf{AIorNot} detector by Nahrawy on Hugging Face is a pretrained swin-tiny-patch4-window7-224 finetuned on the AI or Not dataset. swin-tiny-patch4-window7-224 by microsoft is a new vision Transformer \cite{https://arxiv.org/pdf/2103.14030.pdf}.
+
 \subsubsection{Text detector models}
 
 The \textbf{RoBERTa Base OpenAI Detector} is the output detector model of GPT-2. It was obtained by fine-tuning a RoBERTa base model with the outputs of the GPT-2 model containing 1,5 Billion parameters. The RoBERTa Base OpenAI Detector can be used to classify texts, on whether they are likely to be created by the GPT-2 model. It was published by OpenAI, when the weights of the GPT-2 model 1,5 Billion parameter version was released.
