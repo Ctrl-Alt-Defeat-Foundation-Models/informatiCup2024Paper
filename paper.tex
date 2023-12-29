@@ -69,6 +69,8 @@ The report is structured as follows: After this introduction chapter 2 presents 
 
 \subsubsection{Image detector models}
 
+The \textbf{ai-image-det-resnet18} model is a community made, fine-tuned, resnet18 based, pretrained image detection model. For fine-tuning the author kgmann on Hugging Face used the AI or Not dataset. ResNet-18 is a convolutional neural network that is 18 layers deep. It got pretrained by over a million images from the ImageNet database. \cite{he2015deep}
+
 \subsubsection{Text detector models}
 
 The \textbf{RoBERTa Base OpenAI Detector} is the output detector model of GPT-2. It was obtained by fine-tuning a RoBERTa base model with the outputs of the GPT-2 model containing 1,5 Billion parameters. The RoBERTa Base OpenAI Detector can be used to classify texts, on whether they are likely to be created by the GPT-2 model. It was published by OpenAI, when the weights of the GPT-2 model 1,5 Billion parameter version was released.
