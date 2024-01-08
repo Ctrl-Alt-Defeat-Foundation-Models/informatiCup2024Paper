@@ -39,11 +39,11 @@
 \end{abstract}
 
 \section{Introduction}
-The development of generative Machine Learning models made huge steps forward in the last years, considering the comparison with human crafted artefacts. Large Language Models (LLM) enable the generation of texts in all kinds of different flavours and styles. Image generative models like Vision Transformer (ViT) already created fake images being reported as real by media. Other news showed artists winning art competitions with generated art. This creates an interest in detecting which texts or images are AI generated and which ones are real images or human-written texts.
+The development of generative Machine Learning models made huge steps forward in the last years considering the comparison with human crafted artefacts. Large Language Models (LLM) enable the generation of texts in all kinds of different flavours and styles. Image generative models like Vision Transformer (ViT) already created fake images being reported as real by media. Other news showed artists winning art competitions with generated art. This creates an interest in detecting which texts or images are AI generated and which ones are real images or human-written texts.
 
-Therefore researchers evaluated different approaches to detect fake images and texts. Some adversarial attacks are already known to be able to reduce the performance of other computer vision tasks, e. g. visual object detection, by artificially manipulating real images.
+Therefore researchers evaluated different approaches to detect fake images and texts. Some adversarial attacks are already known to be able to reduce the performance of other computer vision tasks, e.g. visual object detection, by artificially manipulating real images.
 
-As this is a very topical issue the "Gesellschaft für Informatik" \cite{GI} organizes a competition called "InformatiCup2024" \cite{InformatiCup} in which the topic is to manipulate a detectable source in a way that the detector does not recognize it as AI-generated anymore. This raises the questions, whether and how it is possible to manipulate generated artefacts (e.g. images and texts) to reduce the accuracy of detectors.
+As this is a very topical issue the "Gesellschaft für Informatik" \cite{GI} organizes a competition called "InformatiCup2024" \cite{InformatiCup} where the participants try to manipulate a detectable source in a way that the detector does not recognize it as AI-generated anymore. This raises the questions, whether and how it is possible to manipulate generated artefacts (e.g. images and texts) to reduce the accuracy of detectors.
 
 It is necessary to evaluate whether such techniques exist, because otherwise one could rely on detectors, which can easily be tricked. If easy efficient manipulation techniques exist, detectors need to be improved or better detectors need to be developed that are robust against these techniques. But this requires a good understanding how the attacks are performed.
 
@@ -64,7 +64,7 @@ The report is structured as follows: After this introduction chapter 2 presents 
 
 \subsection{Detector models}
 
-The \textbf{AIorNot} detector by Nahrawy on Hugging Face is a pretrained swin-tiny-patch4-window7-224 fine-tuned on the AI or Not dataset. Swin-Transformer by Microsoft is a new Vision Transformer which makes use of hierarchical windows. This reduces the self-attention to not-overlapping windows of other areas of the image \cite{liu2021swin}.
+The \textbf{AIorNot} detector by Nahrawy on Hugging Face is a pretrained swin-tiny-patch4-window7-224 fine-tuned on the AI or Not dataset. Swin-Transformer by Microsoft is a new Vision Transformer which makes use of hierarchical windows. This reduces the self-attention to not-overlapping windows of other areas of the image. \cite{liu2021swin}
 
 The \textbf{ai-image-det-resnet18} model is a community made, fine-tuned, resnet18 based, pretrained image detection model. For fine-tuning the author kgmann on Hugging Face used the AI or Not dataset. ResNet-18 is a convolutional neural network that is 18 layers deep. It got pretrained by over a million images from the ImageNet database. \cite{he2015deep}
 
