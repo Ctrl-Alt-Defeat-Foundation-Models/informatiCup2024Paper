@@ -62,7 +62,7 @@ The report is structured as follows: After this introduction chapter 2 presents 
 
 \subsection{Generative models}
 
-As a second image generative model we use Dall-E 3 from OpenAI (\url{https://openai.com/dall-e-3}). Dall-E works by modelling text and image tokens as a single data stream. This is achieved by training a transformer to autoregressively model those tokens into the resulting stream.
+As a second image generative model we use OpenDalle from dataautogpt3 (\url{https://huggingface.co/dataautogpt3/OpenDalle}). OpenDalle, as it is based on the Dall-E model, works by modelling text and image tokens as a single data stream. This is achieved by training a transformer to autoregressively model those tokens into the resulting stream.
 
 This is done in two steps: 
 \begin{enumerate}
@@ -70,7 +70,7 @@ This is done in two steps:
 	\item BPE-encoded text tokens are concatenated with the image tokens to model a joint distribution over text and image tokens with the training of an autoregressive transformer.
 \end{enumerate}
 
-The exact procedure proposed by Ramesh et. al is explained in their paper. \cite{ramesh2021zeroshot}
+The exact procedure how DALL-E models work proposed by Ramesh et. al is explained in their paper. \cite{ramesh2021zeroshot}
 
 \subsection{Detector models}
 
