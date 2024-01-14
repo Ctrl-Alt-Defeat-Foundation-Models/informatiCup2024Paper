@@ -62,7 +62,9 @@ The report is structured as follows: After this introduction chapter 2 presents 
 \subsection{Generating models}
 
 \subsubsection{Image generating models}
-The first image generating model we us is the Stable Diffusion model. It is developed by engineers and researchers from CompVis (\url{https://github.com/CompVis}), Stability AI (\url{https://stability.ai/}) and LAION (\url{https://laion.ai/}) \cite{patil2022stable}.
+The first image generating model we us is the Stable Diffusion model. It is developed by engineers and researchers from CompVis (\url{https://github.com/CompVis}), Stability AI (\url{https://stability.ai/}) and LAION (\url{https://laion.ai/}) \cite{patil2022stable}. 
+
+Diffusion models achieve state-of-the-art synthesis results on image data by decomposing the image formation process into sequential applications of denoising autoencoders. Due to its work directly in pixel space, they are very computational expensive. To lower the computational costs, the Stable Diffusion model is applied in a latent space of powerful pretrained autoencoders. This works without losing quality and flexibility. \cite{Rombach_2022_CVPR}
 
 \subsubsection{Text generating models}
 
