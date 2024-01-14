@@ -39,10 +39,11 @@
 \end{abstract}
 
 \section{Introduction}
-The development of generative Machine Learning models made huge steps forward in the last years, considering the comparison with human crafted artefacts. Large Language Models (LLM) enable the generation of texts in all kinds of different flavours and styles. Image generating models like Vision Transformer (ViT) already created fake images being reported as real by media. Other news showed artists winning art competitions with generated art. This creates an interest in detecting which texts or images are AI generated and which ones are real images or human-written texts.
+The development of generative Machine Learning models made huge steps forward in the last years considering the comparison with human crafted artefacts. Large Language Models (LLM) enable the generation of texts in all kinds of different flavours and styles. Image generative models like Vision Transformer (ViT) already created fake images being reported as real by media. Other news showed artists winning art competitions with generated art. This creates an interest in detecting which texts or images are AI generated and which ones are real images or human-written texts.
 
-Therefore researchers evaluated different approaches to detect fake images and texts. Some adversarial attacks are already known to be able to reduce the performance of other computer vision tasks, e. g. visual object detection, by artificially manipulating real images. This raises the questions, whether and how it is possible to manipulate generated artefacts (e.g. images and texts) to reduce the accuracy of detectors.
+Therefore researchers evaluated different approaches to detect fake images and texts. Some adversarial attacks are already known to be able to reduce the performance of other computer vision tasks, e.g. visual object detection, by artificially manipulating real images.
 
+As this is a very topical issue the "Gesellschaft für Informatik" \cite{GI} organizes a competition called "InformatiCup2024" \cite{InformatiCup} where the participants try to manipulate a detectable source in a way that the detector does not recognize it as AI-generated anymore. This raises the questions, whether and how it is possible to manipulate generated artefacts (e.g. images and texts) to reduce the accuracy of detectors.
 
 It is necessary to evaluate whether such techniques exist, because otherwise one could rely on detectors, which can easily be tricked. If easy efficient manipulation techniques exist, detectors need to be improved or better detectors need to be developed that are robust against these techniques. But this requires a good understanding how the attacks are performed.
 
@@ -55,30 +56,24 @@ RQ1: How can generated images be manipulated to trick fake image detectors?
 RQ2: How can generated texts be manipulated to trick fake text generators?
 
 
-The report is structured as follows: After this introduction chapter 2 presents related work, especially text and image generating models as well as fake image and text detectors. Chapter 3 presents the methodology of our work followed by chapter 4 presenting the results of our experiments. Afterwards the results will be discussed in chapter 5 and chapter 6 will conclude this paper.
+The report is structured as follows: After this introduction chapter 2 presents related work, especially text and image generative models as well as fake image and text detectors. Chapter 3 presents the methodology of our work followed by chapter 4 presenting the results of our experiments. Afterwards the results will be discussed in chapter 5 and chapter 6 will conclude this paper.
 
 \section{Related work}
 
-\subsection{Generating models}
+\subsection{Generative models}
 
-\subsubsection{Image generating models}
 The first image generative model we use is the Stable Diffusion model. It is developed by engineers and researchers from CompVis (\url{https://github.com/CompVis}), Stability AI (\url{https://stability.ai/}) and LAION (\url{https://laion.ai/}) \cite{patil2022stable}. 
 
 Diffusion models achieve state-of-the-art synthesis results on image data by decomposing the image formation process into sequential applications of denoising autoencoders. Due to its work directly in pixel space, they are very computational expensive. To lower the computational costs, the Stable Diffusion model is applied in a latent space of powerful pretrained autoencoders. This works without losing quality and flexibility. \cite{Rombach_2022_CVPR}
 
-\subsubsection{Text generating models}
-
 \subsection{Detector models}
 
-\subsubsection{Image detector models}
+\textbf{Winston AI} is a commercial AI text detector that starts at 18\$ a month. They have two primary methods for checking if a text is AI written. Firstly linguistic analysis analyses every text for characteristics, that are different between human- and AI-generated work. One example characteristic is the repetitiveness, another is Data Training, where the detector saw many AI written texts of one model and learned unique characteristics that this model uses which then can be detected. So this method is more generator-specific. \cite{WinstonAI}
 
-
-The \textbf{AIorNot} detector by Nahrawy on Hugging Face is a pretrained swin-tiny-patch4-window7-224 fine-tuned on the AI or Not dataset. Swin-Transformer by Microsoft is a new Vision Transformer which makes use of hierarchical windows. This reduces the self-attention to not-overlapping windows of other areas of the image \cite{liu2021swin}.
+The \textbf{AIorNot} detector by Nahrawy on Hugging Face is a pretrained swin-tiny-patch4-window7-224 fine-tuned on the AI or Not dataset. Swin-Transformer by Microsoft is a new Vision Transformer which makes use of hierarchical windows. This reduces the self-attention to not-overlapping windows of other areas of the image. \cite{liu2021swin}
 
 The \textbf{ai-image-det-resnet18} model is a community made, fine-tuned, resnet18 based, pretrained image detection model. For fine-tuning the author kgmann on Hugging Face used the AI or Not dataset. ResNet-18 is a convolutional neural network that is 18 layers deep. It got pretrained by over a million images from the ImageNet database. \cite{he2015deep}
 
-
-\subsubsection{Text detector models}
 
 The \textbf{RoBERTa Base OpenAI Detector} is the output detector model of GPT-2. It was obtained by fine-tuning a RoBERTa base model with the outputs of the GPT-2 model containing 1,5 Billion parameters. The RoBERTa Base OpenAI Detector can be used to classify texts, on whether they are likely to be created by the GPT-2 model. It was published by OpenAI, when the weights of the GPT-2 model 1,5 Billion parameter version was released.
 
@@ -88,6 +83,9 @@ The AI-generated text for learning is extracted by the LLM Vicuna-7B-v1.1 writte
 
 \section{Method}
 To test and evaluate the effect of different data augmentation techniques on the detection capabilities of fake image or text detectors, we created a pipeline of three components: The first component is a generator, which is a model capable of generating fake images or texts. The second component is a processor which augments the data through a specified method, after given a generated image or text. The last component is a detector, which suggests an input being either real or fake. This way we can compare it to the ground truth, to evaluate the capabilities of the detector. By comparing the results with augmented artefacts and with the generated ones without augmentation, we can evaluate the effectiveness of different AI detector-tricking techniques.
+
+We used the aforementioned models for generating and detecting texts and images. As for image processors, one was already given in the description of the "InformatiCup2024" \cite{InformatiCup}, the image noising using the Gaussian noise. Image noise is the random variation of brightness or color information in images produced by the sensor and circuitry of a scanner or digital camera. The reason why the Gaussian one, also called normal noise, is being used, is because it is being caused by natural sources and the most common noise that affects images naturally \cite{mohammed2016study}. \\
+There are several types of noise that can affect images. Some of these noise models are: Gaussian noise, White noise, Fractal noise, Salt \& Pepper noise, Periodic noise, Quantization noise, Speckle noise, Poisson noise, Poisson-Gaussian noise, Structured noise, Gamma noise and Rayleigh noise \cite{gonzalez2009digital}. The three common types of image noise are: Gaussian noise, Salt \& Pepper noise, and Speckle noise \cite{al2010comparative}. That is why we used those three, as well as the Poisson noise.
 
 \section{Results}
 
