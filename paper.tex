@@ -76,6 +76,16 @@ This is done in two steps:
 
 The exact procedure how DALL-E models work proposed by Ramesh et. al is explained in their paper. \cite{ramesh2021zeroshot}
 
+We choose the GPT2 model as one possibility to generate texts for testing our augmentation methods. The GPT model tries to counter the scarcity of labeled text data for machine learning. 
+
+\cite{radford2018improving} try to avoid this problem in a simple two step procedure:
+\begin{enumerate}
+	\item A generative pre-training of a language model on a varying corpus of unlabeled text.
+	\item Discriminative fine-tuning on every specific task.
+\end{enumerate}
+
+To achieve effective transfer with minor changes to the model architecture, task-aware input is used during transformations. \cite{radford2018improving}
+
 \subsection{Detector models}
 
 \textbf{Winston AI} is a commercial AI text detector that starts at 18\$ a month. They have two primary methods for checking if a text is AI written. Firstly linguistic analysis analyses every text for characteristics, that are different between human- and AI-generated work. One example characteristic is the repetitiveness, another is Data Training, where the detector saw many AI written texts of one model and learned unique characteristics that this model uses which then can be detected. So this method is more generator-specific. \cite{WinstonAI}
