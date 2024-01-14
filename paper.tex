@@ -62,6 +62,8 @@ The report is structured as follows: After this introduction chapter 2 presents 
 
 \subsection{Generative models}
 
+The \textbf{Falcon-RW-1B} model built by TII (\url{https://www.tii.ae/}) is the second text generative model we use to test our augmentation models. Its is a decoder-only model trained on 350 billion tokens of the RefinedWeb data set. This data set leverages strict filtering and stringent deduplication to uplift the quality of web data. \cite{penedo2023refinedweb}
+
 \subsection{Detector models}
 
 \textbf{Winston AI} is a commercial AI text detector that starts at 18\$ a month. They have two primary methods for checking if a text is AI written. Firstly linguistic analysis analyses every text for characteristics, that are different between human- and AI-generated work. One example characteristic is the repetitiveness, another is Data Training, where the detector saw many AI written texts of one model and learned unique characteristics that this model uses which then can be detected. So this method is more generator-specific. \cite{WinstonAI}
