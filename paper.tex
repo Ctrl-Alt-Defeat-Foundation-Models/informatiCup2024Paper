@@ -66,6 +66,16 @@ The first image generative model we use is the Stable Diffusion model. It is dev
 
 Diffusion models achieve state-of-the-art synthesis results on image data by decomposing the image formation process into sequential applications of denoising autoencoders. Due to its work directly in pixel space, they are very computational expensive. To lower the computational costs, the Stable Diffusion model (v1.5) is applied in a latent space of powerful pretrained autoencoders. This works without losing quality and flexibility. \cite{Rombach_2022_CVPR}
 
+As a second image generative model we use OpenDalle from dataautogpt3 (\url{https://huggingface.co/dataautogpt3/OpenDalle}). OpenDalle, as it is based on the Dall-E model, works by modelling text and image tokens as a single data stream. This is achieved by training a transformer to autoregressively model those tokens into the resulting stream.
+
+This is done in two steps: 
+\begin{enumerate}
+	\item The images get compressed in a $32 \times 32$ grid of image tokens to reduce the context size of the transformer.
+	\item BPE-encoded text tokens are concatenated with the image tokens to model a joint distribution over text and image tokens with the training of an autoregressive transformer.
+\end{enumerate}
+
+The exact procedure how DALL-E models work proposed by Ramesh et. al is explained in their paper. \cite{ramesh2021zeroshot}
+
 \subsection{Detector models}
 
 \textbf{Winston AI} is a commercial AI text detector that starts at 18\$ a month. They have two primary methods for checking if a text is AI written. Firstly linguistic analysis analyses every text for characteristics, that are different between human- and AI-generated work. One example characteristic is the repetitiveness, another is Data Training, where the detector saw many AI written texts of one model and learned unique characteristics that this model uses which then can be detected. So this method is more generator-specific. \cite{WinstonAI}
