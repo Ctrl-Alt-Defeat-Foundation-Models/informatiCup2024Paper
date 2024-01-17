@@ -93,15 +93,14 @@ The \textbf{Falcon-RW-1B} model built by TII (\url{https://www.tii.ae/}) is the 
 
 \textbf{Winston AI} is a commercial AI text detector that starts at 18\$ a month. They have two primary methods for checking if a text is AI written. Firstly linguistic analysis analyses every text for characteristics, that are different between human- and AI-generated work. One example characteristic is the repetitiveness, another is Data Training, where the detector saw many AI written texts of one model and learned unique characteristics that this model uses which then can be detected. So this method is more generator-specific. \cite{WinstonAI}
 
-The \textbf{AIorNot} detector by Nahrawy on Hugging Face is a pretrained swin-tiny-patch4-window7-224 fine-tuned on the AI or Not dataset. Swin-Transformer by Microsoft is a new Vision Transformer which makes use of hierarchical windows. This reduces the self-attention to not-overlapping windows of other areas of the image. \cite{liu2021swin}
-
-The \textbf{ai-image-det-resnet18} model is a community made, fine-tuned, resnet18 based, pretrained image detection model. For fine-tuning the author kgmann on Hugging Face used the AI or Not dataset. ResNet-18 is a convolutional neural network that is 18 layers deep. It got pretrained by over a million images from the ImageNet database. \cite{he2015deep}
-
-
 The \textbf{RoBERTa Base OpenAI Detector} is the output detector model of GPT-2. It was obtained by fine-tuning a RoBERTa base model with the outputs of the GPT-2 model containing 1,5 Billion parameters. The RoBERTa Base OpenAI Detector can be used to classify texts, on whether they are likely to be created by the GPT-2 model. It was published by OpenAI, when the weights of the GPT-2 model 1,5 Billion parameter version was released.
 
 The \textbf{RADAR-Vicuna-7B} text detector is an adversarial-learning trained model introduced by TrustSafeAI. In the training stage a detector tried to differentiate between human and AI text while a paraphraser trained to make the text more human.
 The AI-generated text for learning is extracted by the LLM Vicuna-7B-v1.1 written by LMSYS Org \cite{hu2023radar}.
+
+The \textbf{AIorNot} detector by Nahrawy on Hugging Face is a pretrained swin-tiny-patch4-window7-224 fine-tuned on the AI or Not dataset. Swin-Transformer by Microsoft is a new Vision Transformer which makes use of hierarchical windows. This reduces the self-attention to not-overlapping windows of other areas of the image. \cite{liu2021swin}
+
+The \textbf{ai-image-det-resnet18} model is a community made, fine-tuned, resnet18 based, pretrained image detection model. For fine-tuning the author kgmann on Hugging Face used the AI or Not dataset. ResNet-18 is a convolutional neural network that is 18 layers deep. It got pretrained by over a million images from the ImageNet database. \cite{he2015deep}
 
 
 \section{Method}
