@@ -63,10 +63,12 @@ The report is structured as follows: After this introduction chapter 2 presents 
 
 \subsection{Generative models}
 
-The first image generative model we use is the \textbf{Stable Diffusion} model. It is developed by engineers and researchers from CompVis (\url{https://github.com/CompVis}), Stability AI (\url{https://stability.ai/}) and LAION (\url{https://laion.ai/}) \cite{patil2022stable}. \newline
+The first image generative model we use is the \textbf{Stable Diffusion} model. It is developed by engineers and researchers from CompVis (\url{https://github.com/CompVis}), Stability AI (\url{https://stability.ai/}) and LAION (\url{https://laion.ai/}) \cite{patil2022stable}.
+
 Diffusion models achieve state-of-the-art synthesis results on image data by decomposing the image formation process into sequential applications of denoising autoencoders. Due to its work directly in pixel space, they are very computational expensive. To lower the computational costs, the Stable Diffusion model (v1.5) is applied in a latent space of powerful pretrained autoencoders. This works without losing quality and flexibility. \cite{Rombach_2022_CVPR}
 
-As a second image generative model we use \textbf{OpenDalle} from dataautogpt3 (\url{https://huggingface.co/dataautogpt3/OpenDalle}). OpenDalle, as it is based on the Dall-E model, works by modelling text and image tokens as a single data stream. This is achieved by training a transformer to autoregressively model those tokens into the resulting stream. \newline
+As a second image generative model we use \textbf{OpenDalle} from dataautogpt3 (\url{https://huggingface.co/dataautogpt3/OpenDalle}). OpenDalle, as it is based on the Dall-E model, works by modelling text and image tokens as a single data stream. This is achieved by training a transformer to autoregressively model those tokens into the resulting stream.
+
 This is done in two steps:
  
 \begin{enumerate}
@@ -76,7 +78,8 @@ This is done in two steps:
 
 The exact procedure how DALL-E models work proposed by Ramesh et. al is explained in their paper. \cite{ramesh2021zeroshot}
 
-We choose the \textbf{GPT2} model as one possibility to generate texts for testing our augmentation methods. The GPT model tries to counter the scarcity of labeled text data for machine learning. \newline 
+We choose the \textbf{GPT2} model as one possibility to generate texts for testing our augmentation methods. The GPT model tries to counter the scarcity of labeled text data for machine learning.
+
 \cite{radford2018improving} try to avoid this problem in a simple two step procedure:
 
 \begin{enumerate}
