@@ -89,6 +89,8 @@ We choose the \textbf{GPT2} model as one possibility to generate texts for testi
 
 To achieve effective transfer with minor changes to the model architecture, task-aware input is used during transformations. \cite{radford2018improving}
 
+A similar model, but in a more recent version is the GPT-4 model. The model is yet to be released by it's developer OpenAI, but is available through an API. Compared to its predecessors GPT-4 is a multimodal model, which is not only capable of using text for input but also images. The model is trained on Next-Token-Prediction and is capable and was post-training aligned to better adhere to desired behaviour. The model is capable to perform well in different professional benchmarks out of a variety of domains and can demonstrate it's performance in different languages. \cite{openai2023gpt4}
+
 The \textbf{Falcon-RW-1B} model built by TII (\url{https://www.tii.ae/}) is the second text generative model we use to test our augmentation models. It is a decoder-only model trained on 350 billion tokens of the RefinedWeb data set. This data set leverages strict filtering and stringent deduplication to uplift the quality of web data. \cite{penedo2023refinedweb}
 
 \subsection{Detector models}
