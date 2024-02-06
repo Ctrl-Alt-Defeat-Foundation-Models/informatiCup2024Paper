@@ -89,7 +89,13 @@ We choose the \textbf{GPT2} model as one possibility to generate texts for testi
 
 To achieve effective transfer with minor changes to the model architecture, task-aware input is used during transformations. \cite{radford2018improving}
 
+A similar model, but in a more recent version is the GPT-4 model. The model is yet to be released by it's developer OpenAI, but is available through an API. Compared to its predecessors, GPT-4 is a multimodal model, which means, that it is not only capable of using texts for input, but also images. The model is trained on Next-Token-Prediction and was post-training aligned to better adhere to the desired behaviour. The newest GPT-model performs well in different professional benchmarks out of a variety of domains and can demonstrate it's performance in different languages. \cite{openai2023gpt4}
+
 The \textbf{Falcon-RW-1B} model built by TII (\url{https://www.tii.ae/}) is the second text generative model we use to test our augmentation models. It is a decoder-only model trained on 350 billion tokens of the RefinedWeb data set. This data set leverages strict filtering and stringent deduplication to uplift the quality of web data. \cite{penedo2023refinedweb}
+
+The \textbf{Llama 2} model was build and released by Meta. It is available in different sizes, ranging from 7 billion to 70 billion parameters and different appliances like LLAMA 2-Chat, which is optimized for dialogue interaction. When it was released in 2023, it outperformed many state-of-the-art open source models. A main refinement compared to its predecessor LLAMA, was the focus on transparency and safety including a post-training alignment. \cite{touvron2023llama}
+
+Another generative text model is \textbf{BLOOM}. This huge 176 billion parameter big model was published in 2023 and is openly available. The model is multilingual and was built in a decentralized manner by many different contributors. Hundreds of researchers helped with the development of the architecture and tokenizer. The final model was trained on the Jean Zay supercomputer. It is build on a decoder-only architecture and uses the ROOTS corpus dataset for training. \cite{workshop2023bloom}
 
 \subsection{Detector models}
 
