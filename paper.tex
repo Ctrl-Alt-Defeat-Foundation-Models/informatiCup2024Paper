@@ -185,6 +185,7 @@ This becomes more clear when comparing fig. \ref{fig:stable_diffusion} with fig 
 Another noticeable result is in the usage of different evaluators. In both cases, text and image, we had one evaluator respectively which could not be fooled with any method. These evaluators where so strict, that they would even classify a human made image provided by us as AI-generated.
 
 \section{Conclusion}
+Overall, we did not find any general fooling technique that can be considered in new AI detectors, but we discovered that the detector, both for the image and text generated content, highly depends on the used generator. Therefore a specific processor might reduce the detection rate for some detectors while it increases the detection rate for others. Our pipeline consisting of creation, process and detection is simple, but effective, and can be used in further research.
 
 
 \subsubsection*{Acknowledgments}
