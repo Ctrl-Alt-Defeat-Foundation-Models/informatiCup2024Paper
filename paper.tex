@@ -1,4 +1,3 @@
-
 \documentclass{article} % For LaTeX2e
 \usepackage{iclr2024_conference,times}
 \usepackage{graphicx}
@@ -144,7 +143,7 @@ Fig. \ref{fig:stable_diffusion} shows how the different processors and their com
 
 The data depicted in fig. \ref{fig:stable_diffusion} shows, that only the nahrawy evaluator fooled the detector the wrong way round, but it is also the only one with the output of 'human-human'. Compared to the Dall-E generator in fig. \ref{fig:dallE} the amount of right tricking is relatively low. There are also other differences as here only umm-maybe achieved 'human-ai' but also 'human-human'.
 
-\begin{figure}
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=\linewidth]{images/stable-diffusion.png}
 	\caption{Stable Diffusion with different processors and nahrawy, resnet18 and umm-maybe as evaluators}
@@ -153,7 +152,7 @@ The data depicted in fig. \ref{fig:stable_diffusion} shows, that only the nahraw
 
 It is visible that the gaussian noise image processor as well as the salt-and-pepper one are the best processors. This can be seen as they solely achieve a great result as well as their combinations with other ones. It is also worth mentioning that these results are only achieved when using the nahrawy evaluator. Whereas resnet18, which can be seen in both figures, couldn't be tricked by any processor.
 
-\begin{figure}
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=\linewidth]{images/dalle.png}
 	\caption{Dall-E with different processors and nahrawy, resnet18 and umm-maybe as evaluators}
@@ -163,16 +162,16 @@ It is visible that the gaussian noise image processor as well as the salt-and-pe
 
 In fig. \ref{fig:gpt2} the text processors are plotted. The colors and the concept stay the same, the left bar is using the radar evaluator and the right one the roberta base one. It is visible that the double-whitespace processor solely has little effect whereas in combination with the typo processor the result rises enormously. This is due to the typo processor since it alone also achieves great results. The radar evaluator only results in black bars. The results of the translator processor are not shown, as the implementation raised several errors during the experiment, which makes the results not suited for comparison.
 
-Similar results can be seen in fig. \ref{fig:falcon} where radar and typo just contain black bars, as its combination with the roberta base evaluator achieves great results. The difference is that with the falcon generator and the roberta base evaluator in combination, some texts are detected as human made even before processing, which explains the red and grey parts.
-
-\begin{figure}
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=\linewidth]{images/gpt2.png}
 	\caption{GPT2 with different processors and nahrawy, resnet18 and umm-maybe as evaluators}
 	\label{fig:gpt2}
 \end{figure}
 
-\begin{figure}
+Similar results can be seen in fig. \ref{fig:falcon} where radar and typo just contain black bars, as its combination with the roberta base evaluator achieves great results. The difference is that with the falcon generator and the roberta base evaluator in combination, some texts are detected as human made even before processing, which explains the red and grey parts.
+
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=\linewidth]{images/falcon.png}
 	\caption{Falcon with different processors and nahrawy, resnet18 and umm-maybe as evaluators}
