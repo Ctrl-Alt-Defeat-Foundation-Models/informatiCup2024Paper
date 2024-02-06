@@ -80,7 +80,7 @@ The exact procedure how DALL-E models work proposed by Ramesh et. al is explaine
 
 We choose the \textbf{GPT2} model as one possibility to generate texts for testing our augmentation methods. The GPT model tries to counter the scarcity of labeled text data for machine learning.
 
-\cite{radford2018improving} try to avoid this problem in a simple two step procedure:
+\cite{radford2019language} try to avoid this problem in a simple two step procedure:
 
 \begin{enumerate}
 	\item A generative pre-training of a language model on a varying corpus of unlabeled text.
@@ -112,6 +112,10 @@ The \textbf{RADAR-Vicuna-7B} text detector is an adversarial-learning trained mo
 The \textbf{AIorNot} detector by Nahrawy on Hugging Face is a pretrained swin-tiny-patch4-window7-224 fine-tuned on the AI or Not dataset. Swin-Transformer by Microsoft is a new Vision Transformer which makes use of hierarchical windows. This reduces the self-attention to not-overlapping windows of other areas of the image. \cite{liu2021swin}
 
 The \textbf{ai-image-det-resnet18} model is a community made, fine-tuned, resnet18 based, pretrained image detection model. For fine-tuning the author kgmann on Hugging Face used the AI or Not dataset. ResNet-18 is a convolutional neural network that is 18 layers deep. It got pretrained by over a million images from the ImageNet database. \cite{he2015deep}
+
+Another AI generated image detector model is \textbf{Is It AI?} developed by Is It AI. The tool first determines different features of the image, e.g. colour patterns, shapes and textures. These features are determined using machine learning models. Afterwards, the patterns are compared to those, typically contained in human- or AI-generated content. The Is It AI-model was trained on large datasets of human- and AI-generated content to receive the base patterns to compare to. The tool is freely usable through an web interface. \cite{IsItAI2024}
+
+There is also an AI-generated-image-detection-approach from Content at Scale. They published their \textbf{Advanced AI Image Detector} as a free web tool to detect generated AI images. The application categorizes the input content by evaluating pixels, smoothness and other AI image patterns. \cite{ContentAtScale2024Advanced}
 
 
 \section{Method}
