@@ -93,7 +93,13 @@ We choose the \textbf{GPT2} model as one possibility to generate texts for testi
 
 To achieve effective transfer with minor changes to the model architecture, task-aware input is used during transformations. \cite{radford2018improving}
 
+A similar model, but in a more recent version is the GPT-4 model. The model is yet to be released by it's developer OpenAI, but is available through an API. Compared to its predecessors, GPT-4 is a multimodal model, which means, that it is not only capable of using texts for input, but also images. The model is trained on Next-Token-Prediction and was post-training aligned to better adhere to the desired behaviour. The newest GPT-model performs well in different professional benchmarks out of a variety of domains and can demonstrate it's performance in different languages. \cite{openai2023gpt4}
+
 The \textbf{Falcon-RW-1B} model built by TII (\url{https://www.tii.ae/}) is the second text generative model we use to test our augmentation models. It is a decoder-only model trained on 350 billion tokens of the RefinedWeb data set. This data set leverages strict filtering and stringent deduplication to uplift the quality of web data. \cite{penedo2023refinedweb}
+
+The \textbf{Llama 2} model was build and released by Meta. It is available in different sizes, ranging from 7 billion to 70 billion parameters and different appliances like LLAMA 2-Chat, which is optimized for dialogue interaction. When it was released in 2023, it outperformed many state-of-the-art open source models. A main refinement compared to its predecessor LLAMA, was the focus on transparency and safety including a post-training alignment. \cite{touvron2023llama}
+
+Another generative text model is \textbf{BLOOM}. This huge 176 billion parameter big model was published in 2023 and is openly available. The model is multilingual and was built in a decentralized manner by many different contributors. Hundreds of researchers helped with the development of the architecture and tokenizer. The final model was trained on the Jean Zay supercomputer. It is build on a decoder-only architecture and uses the ROOTS corpus dataset for training. \cite{workshop2023bloom}
 
 \subsection{Detector models}
 
@@ -124,6 +130,10 @@ We used the aforementioned models for generating and detecting texts and images.
 There are several types of noise that can affect images. Some of these noise models are: Gaussian noise, White noise, Fractal noise, Salt \& Pepper noise, Periodic noise, Quantization noise, Speckle noise, Poisson noise, Poisson-Gaussian noise, Structured noise, Gamma noise and Rayleigh noise \cite{gonzalez2009digital}. The three common types of image noise are: Gaussian noise, Salt \& Pepper noise, and Speckle noise \cite{al2010comparative}. That is why we used those three, as well as the Poisson noise.
 
 As for text processors, we evaluated three different methods of augmenting generated texts. The first approach was to replace every white-space in a given text by two white-spaces. The second approach was to add some typos to the texts. This has been implemented based on the nlpaug library, which is capable of simulating certain typos as if they were made on a keyboard by a human. The typos include mistakes, like hitting a wrong key, which is close to the right one. This results in typos often created by humans. The last approach is a translator, which has been used to translate the given text into a certain language (in this case French) and re-translate it into english. As translators are not deterministic but aim to keep the semantic meaning, the resulting text should be semantically the same, but might have a different formulation.
+
+For the ease of use and low time consumption we implemented a simple python command line interface, that makes it easy to define a pipeline consisting of a generator, processor and evaluator. It is also possible to enter multiple processors for one pipeline to stack and apply them together on the content.
+
+The resulting pipelines, especially for images, were very resource intensive and could not be run efficiently on our own machines. We chose to use the free Google Colab resources, consisting of a NVIDIA Tesla T4 GPU that speeds up the pipelines up to 40x compared to our local execution time and allowed us to use the same environment for all experiments. 
 
 \section{Results + Discussion}
 In the following section we take a look on the results of the aforementioned experiment.
@@ -176,13 +186,9 @@ Another noticeable result is in the usage of different evaluators. In both cases
 
 
 \subsubsection*{Acknowledgments}
-
+We would like to thank the "Gesellschaft für Informatik" for providing the competition "Fool AI Detectors". We would also like to thank the teaching assistants of the Foundation Models-Team for their helpful advice.
 
 \bibliography{bibliography}
 \bibliographystyle{iclr2024_conference}
-
-\appendix
-\section{Appendix}
-You may include other additional sections here.
 
 \end{document}
