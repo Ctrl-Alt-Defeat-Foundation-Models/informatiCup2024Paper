@@ -127,6 +127,10 @@ There are several types of noise that can affect images. Some of these noise mod
 
 As for text processors, we evaluated three different methods of augmenting generated texts. The first approach was to replace every white-space in a given text by two white-spaces. The second approach was to add some typos to the texts. This has been implemented based on the nlpaug library, which is capable of simulating certain typos as if they were made on a keyboard by a human. The typos include mistakes, like hitting a wrong key, which is close to the right one. This results in typos often created by humans. The last approach is a translator, which has been used to translate the given text into a certain language (in this case French) and re-translate it into english. As translators are not deterministic but aim to keep the semantic meaning, the resulting text should be semantically the same, but might have a different formulation.
 
+For the ease of use and low time consumption we implemented a simple python command line interface, that makes it easy to define a pipeline consisting of a generator, processor and evaluator. It is also possible to enter multiple processors for one pipeline to stack and apply them together on the content.
+
+The resulting pipelines, especially for images, were very resource intensive and could not be run efficiently on our own machines. We chose to use the free Google Colab resources, consisting of a NVIDIA Tesla T4 GPU that speeds up the pipelines up to 40x compared to our local execution time and allowed us to use the same environment for all experiments. 
+
 \section{Results + Discussion}
 In the following section we take a look on the results of the aforementioned experiment.
 
