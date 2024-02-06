@@ -135,7 +135,7 @@ For the ease of use and low time consumption we implemented a simple python comm
 
 The resulting pipelines, especially for images, were very resource intensive and could not be run efficiently on our own machines. We chose to use the free Google Colab resources, consisting of a NVIDIA Tesla T4 GPU that speeds up the pipelines up to 40x compared to our local execution time and allowed us to use the same environment for all experiments. 
 
-\section{Results + Discussion}
+\section{Results}
 In the following section we take a look on the results of the aforementioned experiment.
 
 
@@ -158,8 +158,8 @@ It is visible that the gaussian noise image processor as well as the salt-and-pe
 \end{figure}
 
 
-In fig. \ref{fig:gpt2} the text processors are plotted. The colors stay the same and the concept as well, where the left bar is using the radar evaluator and the right one the roberta base one. It is visible that the double-whitespace processor solely has little effect whereas in combination with the typo processor the result rises enormously. This is due to the typo processor since it alone also achieves great results. The radar evaluator only produces only black bars. 
-Similar results can be seen in fig. \ref{fig:falcon} where radar just contains black bars and typo as well, as its combination with the roberta base evaluator achieves great results. The difference is that with the falcon generator and the roberta base evaluator in combination, some texts are detected as human made even before processing, which explains the red and grey parts. 
+In fig. \ref{fig:gpt2} the text processors are plotted. The colors and the concept stay the same, the left bar is using the radar evaluator and the right one the roberta base one. It is visible that the double-whitespace processor solely has little effect whereas in combination with the typo processor the result rises enormously. This is due to the typo processor since it alone also achieves great results. The radar evaluator only produces black bars. 
+Similar results can be seen in fig. \ref{fig:falcon} where radar and typo just contain black bars, as its combination with the roberta base evaluator achieves great results. The difference is that with the falcon generator and the roberta base evaluator in combination, some texts are detected as human made even before processing, which explains the red and grey parts. 
 
 \begin{figure}
 	\centering
@@ -181,6 +181,8 @@ This becomes more clear when comparing fig. \ref{fig:stable_diffusion} with fig 
 
 
 Another noticeable result is in the usage of different evaluators. In both cases, text and image, we had one evaluator respectively which could not be fooled with any method. These evaluators where so strict, that they would even classify a human made image provided by us as AI-generated.
+
+\section{Discussion}
 
 \section{Conclusion}
 
