@@ -161,9 +161,8 @@ Similar results can be seen in fig. \ref{fig:falcon} where radar and typo just c
 \end{figure}
 
 \section{Discussion}
-To summarize the results we can say, that the combination between generators and evaluators plays a huge role in the results. In case of the text generators the difference seems minor, but for example the roberta base evaluator detected around ten falcon generated texts as human made in the middle case of fig. \ref{fig:falcon} before and after process, which means that if that would not have been the case, we would have a perfect score here.
-
-This becomes more clear when comparing fig. \ref{fig:stable_diffusion} with fig \ref{fig:dallE} where the importance of the used generators becomes visible. The stable-diffusion generator produces images where it is difficult to fool a detector whereas when using the same processors and detectors, the images of dallE can be processed in a way to fool some detectors.
+To summarize the results we can say, that the combination between generators and evaluators plays a huge role in the results. This becomes clear when comparing fig. \ref{fig:stable_diffusion} with fig \ref{fig:dallE}. The stable-diffusion generator produces images where it is difficult to fool a detector whereas when using the same processors and detectors, the images of dallE can be processed in a way to fool some detectors.
+In case of the text generators the difference seems a bit minor but still observable.
 
 Another noticeable result is in the usage of different evaluators. In both cases, text and image, we had one evaluator respectively which could not be fooled with any method. These evaluators where so strict, that they would even classify a human made image provided by us as AI-generated.
 
